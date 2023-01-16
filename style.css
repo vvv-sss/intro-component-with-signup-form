@@ -1,0 +1,319 @@
+/* === CSS Reset ================================== */
+/* ================================================ */
+/* #region */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* #endregion */
+
+/* === Variables ================================== */
+/* ================================================ */
+/* #region */
+
+:root {
+
+    --clr-primary-100: hsl(0, 100%, 74%);
+
+    --clr-accent-100-preset: 154, 59%, 51%;
+    --clr-accent-100: hsla(var(--clr-accent-100-preset), 1);
+    --clr-accent-100-hover: hsla(var(--clr-accent-100-preset), 0.8);
+
+    --clr-accent-200-preset: 248, 32%, 49%;
+    --clr-accent-200: hsla(var(--clr-accent-200-preset), 1);
+    --clr-accent-200-hover: hsla(var(--clr-accent-200-preset), 0.8);
+
+    --clr-neutral-100: hsla(0, 0%, 100%, 1);
+    --clr-neutral-200: hsla(248, 9%, 26%, 1);
+    --clr-neutral-300: hsla(0, 0%, 0%, 0.15);
+    --clr-neutral-400: hsl(247, 32%, 72%);
+    --clr-neutral-for-input-borders: hsla(0, 0%, 87%, 1);
+    
+    --fs-100: 0.69rem;   /* 11px */
+    --fs-200: 0.88rem;   /* 14px */
+    --fs-300: 1.00rem;   /* 16px */
+    --fs-400: 1.75rem;   /* 28px */
+    --fs-500: 3.13rem;   /* 50px */
+
+    --fw-regular: 500;
+    --fw-semiBold: 600;
+    --fw-bold: 700;
+
+    --lh-100: 1.31rem;   /* 21px */
+    --lh-200: 1.63rem;   /* 26px */
+    --lh-300: 2.25rem;   /* 36px */
+    --lh-400: 3.44rem;   /* 55px */
+
+}
+
+/* #endregion */
+
+/* === Global Styles ============================== */
+/* ================================================ */
+/* #region */
+
+body {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: row;
+    padding: 5.5rem 1.5rem 4.25rem;
+    padding-bottom: 4rem;
+    background-color: var(--clr-primary-100);
+    background-image: url(./images/bg-intro-mobile.png);
+    background-attachment: fixed;
+    background-position: top;
+    font-family: 'Poppins', sans-serif;
+    font-weight: var(--fw-regular);
+    text-align: center;
+}
+
+/* #endregion */
+
+/* === Components Styles ========================== */
+/* ================================================ */
+/* #region */
+
+.title {
+    margin-bottom: 1rem;
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-300);
+}
+
+.text-after-title {
+    margin-bottom: 4rem;
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-300);
+    line-height: var(--lh-200);
+}
+
+.try-free-btn {
+    width: 100%;
+    padding: 1.13rem;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 0.5rem 0 0 var(--clr-neutral-300);
+    box-shadow: 0 0.5rem 0 0 var(--clr-neutral-300);
+    margin-bottom: 1.5rem;
+    background-color: var(--clr-accent-200);
+    color: var(--clr-neutral-100);
+    font-family: inherit;
+    font-size: var(--fs-300);
+    line-height: var(--lh-200);
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.try-free-btn:hover {
+    background-color: var(--clr-accent-200-hover);
+}
+
+.try-free-btn span {
+    white-space: nowrap;
+}
+
+.try-free-btn span:first-child {
+    font-weight: var(--fw-bold);
+}
+
+.sign-up-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 1rem;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 0.5rem 0 0 var(--clr-neutral-300);
+    box-shadow: 0 0.5rem 0 0 var(--clr-neutral-300);
+    background-color: var(--clr-neutral-100);
+    overflow: hidden;
+}
+
+.sign-up-form input {
+    width: calc(100% - 2.6rem);
+    min-width: 13rem;
+    padding: 0.94rem 1.21rem;
+    border: 1px solid var(--clr-neutral-for-input-borders);
+    border-radius: 0.25rem;
+    outline: none;
+    color: var(--clr-neutral-200);
+    font-family: inherit;
+    font-size: var(--fs-200);
+    font-weight: var(--fw-semiBold);
+}
+
+.sign-up-form__input-container {
+    position: relative;
+}
+
+.sign-up-form__error-icon {
+    display: block;
+    position: absolute;
+    top: 22%;
+    right: 4%;
+    display: none;
+}
+
+.sign-up-form__error-msg {
+    display: block;
+    margin: 0.38rem 0 0.19rem;
+    color: var(--clr-primary-100);
+    font-size: var(--fs-100);
+    font-style: italic;
+    text-align: right;
+    display: none;
+}
+
+#sign-up-form__submit-btn {
+    padding: 0.94rem 0;
+    border: none;
+    border-radius: 0.25rem;
+    -webkit-box-shadow: 0 -0.25rem 0 0 var(--clr-neutral-300) inset;
+    box-shadow: 0 -0.25rem 0 0 var(--clr-neutral-300) inset;
+    margin-bottom: 0.5rem;
+    background-color: var(--clr-accent-100);
+    color: var(--clr-neutral-100);
+    font-family: inherit;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-semiBold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#sign-up-form__submit-btn:hover {
+    background-color: var(--clr-accent-100-hover);
+}
+
+.sign-up-form__terms-msg {
+    width: 80%;
+    margin: 0 auto;
+    color: var(--clr-neutral-400);
+    font-size: var(--fs-100);
+    line-height: var(--lh-100);
+}
+
+.sign-up-form span a {
+    color: var(--clr-primary-100);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+}
+
+.sign-up-form__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-neutral-200);
+    opacity: 0.75;
+    z-index: -1;
+}
+
+svg path,
+svg rect{
+    fill: var(--clr-primary-100);
+}
+
+/* #endregion */
+
+/* === Media Queries ============================== */
+/* ================================================ */
+/* #region */
+
+@media only screen and (min-width: 650px) {
+    
+    body {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-column-gap: 3%;
+        -moz-column-gap: 3%;
+        column-gap: 3%;
+        padding-top: 7.56rem;
+        padding-bottom: 7.56rem;
+        background-image: url(./images/bg-intro-desktop.png);
+    }
+
+    body > div {
+        max-width: 33.75rem;
+    }
+
+    body div:nth-of-type(1) {
+        -ms-grid-column-align: end;
+        justify-self: end;
+    }
+
+    .title,
+    .text-after-title {
+        text-align: left;
+    }
+
+}
+
+@media only screen and (min-width: 950px) {
+
+    .title {
+        font-size: var(--fs-500);
+        line-height: var(--lh-400);
+    }
+
+}
+
+/* #endregion */
